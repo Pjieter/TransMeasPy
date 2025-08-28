@@ -1,0 +1,48 @@
+# Example YAML Station configuration file
+#
+# This file gets snapshotted and can be read back from the JSON
+# snapshot for every experiment run.
+#
+# All fields are optional unless explicitly mentioned otherwise.
+#
+# As in all YAML files a one-line notation can also be used
+# instead of nesting notation.
+#
+# The file starts with a list of loadable instruments instances,
+# i.e. there can be two entries for two instruments of the same
+# type if you want to specify two different use cases
+# e.g. "dmm1-readout" and "dmm1-calibration".
+#
+instruments:
+  keithley1:
+    type: local_qcodes.instrument_drivers.Keithley.Keithley_2182a.Keithley2182a
+    address: GPIB::1::INSTR
+    enable_forced_reconnect: true
+  keithley2:
+    type: local_qcodes.instrument_drivers.Keithley.Keithley_2182a.Keithley2182a
+    address: GPIB::2::INSTR
+    enable_forced_reconnect: true
+  keithley3:
+    type: local_qcodes.instrument_drivers.Keithley.Keithley_2182a.Keithley2182a
+    address: GPIB::3::INSTR
+    enable_forced_reconnect: true
+  ivvi:
+    type: qcodes_contrib_drivers.drivers.QuTech.IVVI.IVVI
+    enable_forced_reconnect: true
+    address: COM4
+  mfli1:
+    type: zhinst.qcodes.MFLI
+    init:
+      serial: dev4852
+      host: localhost
+      port: 8004
+  mfli2:
+    type: zhinst.qcodes.MFLI
+    init:
+      serial: dev4842
+      host: localhost
+      port: 8004
+  kiutra:
+    type: local_qcodes.instrument_drivers.Kiutra.L_type_rapid.L_type_rapid
+    init:
+      address: 192.168.11.20

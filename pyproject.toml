@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "transmeaspy"
+version = "0.1.0"
+description = ""
+authors = ["Michiel Dubbelman <m.p.dubbelman@tudelft.nl>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+qcodes = "^0.53.0"
+zhinst-qcodes = "^0.7.0"
+qcodes-contrib-drivers = "^0.23.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
