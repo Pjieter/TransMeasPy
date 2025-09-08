@@ -1,0 +1,61 @@
+name: Safety and Limits Implementation
+description: Implement safety features and limit checking for measurements
+title: "[SCOPE] Implement Safety Feature: [FEATURE]"
+labels: ["enhancement", "safety", "limits"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This issue is derived from the comprehensive scope definition in Issue #1.
+        
+  - type: dropdown
+    id: safety_feature
+    attributes:
+      label: Safety Feature
+      description: Which safety feature should be implemented?
+      options:
+        - Pre-measurement Limit Checks
+        - Runtime Safety Monitoring
+        - Instrument Interlocks
+        - Safe Shutdown Procedures
+    validations:
+      required: true
+      
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Detailed description of the safety feature requirements
+      placeholder: Describe the safety feature and its importance for safe measurements
+    validations:
+      required: true
+      
+  - type: textarea
+    id: safety_requirements
+    attributes:
+      label: Safety Requirements
+      description: Specific safety requirements and scenarios to handle
+      placeholder: |
+        - Maximum current limits
+        - Temperature thresholds
+        - Voltage ranges
+        - Emergency stop procedures
+        - etc.
+    validations:
+      required: true
+      
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance Criteria
+      description: Clear criteria for when this issue is complete
+      value: |
+        - [ ] Safety feature implemented
+        - [ ] Configurable safety parameters
+        - [ ] Clear error messages for violations
+        - [ ] Integration with measurement framework
+        - [ ] Unit tests for safety scenarios
+        - [ ] Documentation for configuration
+    validations:
+      required: true

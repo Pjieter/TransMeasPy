@@ -1,0 +1,60 @@
+name: Runtime Control Feature
+description: Implement runtime control and adaptability features
+title: "[SCOPE] Implement Runtime Control: [FEATURE]"
+labels: ["enhancement", "runtime-control"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This issue is derived from the comprehensive scope definition in Issue #1.
+        
+  - type: dropdown
+    id: control_feature
+    attributes:
+      label: Runtime Control Feature
+      description: Which runtime control feature should be implemented?
+      options:
+        - Safe Pause/Resume/Stop
+        - Parameter Adaptation
+        - Adaptive Scan Algorithms
+        - Transaction/Rollback Semantics
+    validations:
+      required: true
+      
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Detailed description of the runtime control feature
+      placeholder: Describe how this feature will enable live control during measurements
+    validations:
+      required: true
+      
+  - type: textarea
+    id: use_cases
+    attributes:
+      label: Use Cases
+      description: Specific use cases where this feature is needed
+      placeholder: |
+        - Long-running temperature sweeps
+        - Adaptive current limits
+        - Real-time parameter optimization
+        - etc.
+    validations:
+      required: true
+      
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance Criteria
+      description: Clear criteria for when this issue is complete
+      value: |
+        - [ ] Runtime control feature implemented
+        - [ ] State management during control operations
+        - [ ] Data integrity maintained
+        - [ ] User interface for control
+        - [ ] Integration tests for control scenarios
+        - [ ] Documentation and examples
+    validations:
+      required: true

@@ -1,0 +1,61 @@
+name: Architecture and Framework
+description: Core architecture and framework decisions for TransMeasPy
+title: "[SCOPE] Architecture: [COMPONENT]"
+labels: ["enhancement", "architecture"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This issue is derived from the comprehensive scope definition in Issue #1.
+        
+  - type: dropdown
+    id: architecture_component
+    attributes:
+      label: Architecture Component
+      description: Which architectural component should be addressed?
+      options:
+        - Data Model (Independent/Dependent Variables)
+        - QCodes vs Quantify Framework Decision
+        - Dependency Management
+        - Plugin Architecture
+        - Error Handling Framework
+    validations:
+      required: true
+      
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Detailed description of the architectural component
+      placeholder: Describe the architectural decision or component that needs to be implemented
+    validations:
+      required: true
+      
+  - type: textarea
+    id: requirements
+    attributes:
+      label: Requirements
+      description: Specific requirements for this architectural component
+      placeholder: |
+        - Performance requirements
+        - Compatibility requirements
+        - Extensibility requirements
+        - etc.
+    validations:
+      required: true
+      
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance Criteria
+      description: Clear criteria for when this issue is complete
+      value: |
+        - [ ] Architectural design documented
+        - [ ] Implementation completed
+        - [ ] Integration with existing framework
+        - [ ] Performance validated
+        - [ ] Unit and integration tests
+        - [ ] Documentation updated
+    validations:
+      required: true

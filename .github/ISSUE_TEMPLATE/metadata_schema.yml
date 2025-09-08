@@ -1,0 +1,58 @@
+name: Metadata Schema Definition
+description: Define metadata schemas for samples, devices, and instruments
+title: "[SCOPE] Define Metadata Schema for [COMPONENT]"
+labels: ["enhancement", "architecture", "metadata"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This issue is derived from the comprehensive scope definition in Issue #1.
+        
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      description: Which metadata schema should be defined?
+      options:
+        - Samples and Devices
+        - Instruments
+        - Environmental Conditions
+    validations:
+      required: true
+      
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Detailed description of the metadata schema requirements
+      placeholder: Describe what metadata needs to be captured and how it will be used
+    validations:
+      required: true
+      
+  - type: textarea
+    id: schema_requirements
+    attributes:
+      label: Schema Requirements
+      description: Specific requirements for the metadata schema
+      placeholder: |
+        - Device identification fields
+        - Electrode configuration
+        - Physical properties
+        - etc.
+    validations:
+      required: true
+      
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance Criteria
+      description: Clear criteria for when this issue is complete
+      value: |
+        - [ ] JSON schema definition created
+        - [ ] Validation functions implemented
+        - [ ] Documentation with examples
+        - [ ] Integration with measurement framework
+        - [ ] Unit tests for schema validation
+    validations:
+      required: true
