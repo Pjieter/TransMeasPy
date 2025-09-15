@@ -1,65 +1,44 @@
-# TransMeasPy
+## Badges
+
+(Customize these badges with your own links, and check https://shields.io/ or https://badgen.net/ to see which other badges are available.)
+
+| fair-software.eu recommendations | |
+| :-- | :--  |
+| (1/5) code repository              | [![github repo badge](https://img.shields.io/badge/github-repo-000.svg?logo=github&labelColor=gray&color=blue)](https://github.com/Pjieter/TransMeasPy) |
+| (2/5) license                      | [![github license badge](https://img.shields.io/github/license/Pjieter/TransMeasPy)](https://github.com/Pjieter/TransMeasPy) |
+| (3/5) community registry           | [![RSD](https://img.shields.io/badge/rsd-TransMeasPy-00a3e3.svg)](https://www.research-software.nl/software/TransMeasPy) [![workflow pypi badge](https://img.shields.io/pypi/v/TransMeasPy.svg?colorB=blue)](https://pypi.python.org/project/TransMeasPy/) |
+| (4/5) citation                     | [![DOI](https://zenodo.org/badge/DOI/<replace-with-created-DOI>.svg)](https://doi.org/<replace-with-created-DOI>)|
+| (5/5) checklist                    | [![workflow cii badge](https://bestpractices.coreinfrastructure.org/projects/<replace-with-created-project-identifier>/badge)](https://bestpractices.coreinfrastructure.org/projects/<replace-with-created-project-identifier>) |
+| howfairis                          | [![fair-software badge](https://img.shields.io/badge/fair--software.eu-%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8B-yellow)](https://fair-software.eu) |
+| **Other best practices**           | &nbsp; |
+| Static analysis                    | [![workflow scq badge](https://sonarcloud.io/api/project_badges/measure?project=Pjieter_TransMeasPy&metric=alert_status)](https://sonarcloud.io/dashboard?id=Pjieter_TransMeasPy) |
+| Coverage                           | [![workflow scc badge](https://sonarcloud.io/api/project_badges/measure?project=Pjieter_TransMeasPy&metric=coverage)](https://sonarcloud.io/dashboard?id=Pjieter_TransMeasPy) || Documentation                      | [![Documentation Status](https://readthedocs.org/projects/TransMeasPy/badge/?version=latest)](https://TransMeasPy.readthedocs.io/en/latest/?badge=latest) || **GitHub Actions**                 | &nbsp; |
+| Build                              | [![build](https://github.com/Pjieter/TransMeasPy/actions/workflows/build.yml/badge.svg)](https://github.com/Pjieter/TransMeasPy/actions/workflows/build.yml) |
+| Citation data consistency          | [![cffconvert](https://github.com/Pjieter/TransMeasPy/actions/workflows/cffconvert.yml/badge.svg)](https://github.com/Pjieter/TransMeasPy/actions/workflows/cffconvert.yml) || SonarCloud                         | [![sonarcloud](https://github.com/Pjieter/TransMeasPy/actions/workflows/sonarcloud.yml/badge.svg)](https://github.com/Pjieter/TransMeasPy/actions/workflows/sonarcloud.yml) || Link checker              | [![link-check](https://github.com/Pjieter/TransMeasPy/actions/workflows/link-check.yml/badge.svg)](https://github.com/Pjieter/TransMeasPy/actions/workflows/link-check.yml) |## How to use TransMeasPy
 
 Instrument-agnostic electronic transport measurement framework built on top of qcodes. TransMeasPy structures experiments around independent (set) and dependent (measured) variables, captures comprehensive instrument and sample metadata for reproducibility, enforces safety limits, and supports adaptable, stoppable measurements.
 
-Status: Early planning. Expect API changes.
-
-## Why TransMeasPy
-- Instrument-agnostic: use qcodes drivers to control a wide range of instruments.
-- Reproducible by default: persist instrument states, environment, and sample metadata.
-- Safe and robust: preflight limit checks, continuous monitoring, and safe shutdown on violations.
-- Adaptive experiments: change scan parameters during long runs without losing data.
-- Metadata-first: dependent/independent variable model with rich, versioned metadata.
-
-## Features
-- Define measurements using independent (set) and dependent (measure) variables.
-- Collect and store full instrument and sample/device metadata alongside data.
-- Safe to stop at any point with consistent, partial dataset persistence.
-- Adapt parameters (e.g., sweep ranges, step sizes) while measuring.
-- Instrument limit validation before starting; optional continuous limit enforcement.
-- Plugin-friendly architecture to add instruments and measurement types.
-
-## Scope
-- Electronic transport measurements using qcodes as the basis for instrument drivers.
-- Dataset organization around independent/dependent variables.
-- Comprehensive metadata capture (instruments, sample/device, environment).
-- Safety-first execution with pre-checks and ongoing checks.
-- Runtime control: pause/resume/stop and live parameter adaptation.
-
-## Non-goals and boundaries
-- Not a general framework for non-transport modalities (out of initial scope).
-- No GUI beyond CLI/examples for the MVP.
-- Does not include development of new qcodes drivers (relies on existing drivers).
-- No built-in ML analytics (can be added externally).
-
-## Target users and use cases
-- Experimental physicists, lab technicians, and students.
-- Example use cases:
-  - 2D field–temperature sweep with adaptive current limit.
-  - Repeatable multi-parameter measurement with full metadata capture.
-  - Long-running scan where ranges are adjusted live based on intermediate results.
+The project setup is documented in [project_setup.md](project_setup.md). Feel free to remove this document (and/or the link to this document) if you don't need it.
 
 ## Installation
-TransMeasPy is in early development; install from source for now.
 
-Prerequisites:
-- Python >= 3.10 (recommended 3.12+)
-- qcodes (minimum version: TBD)
-- HDF5 (via h5py) if using HDF5-backed datasets
+To install TransMeasPy from GitHub repository, do:
 
+```console
+git clone git@github.com:Pjieter/TransMeasPy.git
+cd TransMeasPy
+python -m pip install .
+```
+
+## Documentation
+
+Include a link to your project's full documentation here.
 
 ## Contributing
-Contributions are welcome! Please open an issue to discuss proposed changes. PRs with tests and examples are encouraged.
-Guidelines (TBD): coding standards, commit conventions, and review process.
 
-## License
-MIT License
+If you want to contribute to the development of TransMeasPy,
+have a look at the [contribution guidelines](CONTRIBUTING.md).
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+## Credits
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-## Acknowledgments
-- Built on top of qcodes and the wider Python scientific ecosystem.
+This package was created with [Copier](https://github.com/copier-org/copier) and the [NLeSC/python-template](https://github.com/NLeSC/python-template).

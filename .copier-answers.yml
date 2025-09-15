@@ -1,0 +1,40 @@
+# Changes here will be overwritten by Copier
+SelectCitation:
+- AddCitationFile_flag
+- AddCFFConvert_flag
+SelectCodeQualityFeatures:
+- AddLocalTests_flag
+- SelectGitHubActions_flag
+- AddLinting_flag
+- AddPreCommit_flag
+- AddSonarCloud_flag
+SelectCommunityFeatures:
+- AddContributing_flag
+SelectDocumentationFeatures:
+- AddLocalDocumentation_flag
+- AddOnlineDocumentation_flag
+- AddDevDoc_flag
+- AddGitHubActionDocumentation_flag
+SelectGitHubActions:
+- AddGitHubActionBuild_flag
+- AddLinkCheck_flag
+SelectPublishReleaseFeatures:
+- SelectCitation_flag
+- AddChangeLog_flag
+- AddZenodo_flag
+_commit: 0.6.1
+_src_path: https://github.com/nlesc/python-template.git
+copyright_holder: Michiel Dubbelman
+email: m.p.dubbelman@tudelft.nl
+full_name: Michiel Dubbelman
+github_organization: Pjieter
+keywords: measurement,transport
+license: MIT
+package_name: TransMeasPy
+package_short_description: Instrument-agnostic electronic transport measurement framework
+    built on top of qcodes. TransMeasPy structures experiments around independent
+    (set) and dependent (measured) variables, captures comprehensive instrument and
+    sample metadata for reproducibility, enforces safety limits, and supports adaptable,
+    stoppable measurements.
+template_profile: ask
+version: 0.1.0
