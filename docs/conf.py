@@ -61,7 +61,7 @@ todo_include_todos = False
 
 # -- Use autoapi.extension to run sphinx-apidoc -------
 
-autoapi_dirs = ["../src/TransMeasPy"]
+autoapi_dirs = ["../src/transmeaspy"]
 
 # -- Options for HTML output ----------------------------------------------
 
