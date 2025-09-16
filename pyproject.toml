@@ -33,11 +33,12 @@ version = "0.1.0"
 requires-python = ">=3.11,<4"
 
 dependencies = [
-    "qcodes>=0.53.0,<1",
-    "zhinst-qcodes>=0.7.0,<1",
-    "qcodes-contrib-drivers>=0.23.0,<1",
-    "pyqt5-qt5==5.15.2",
-    "quantify>=0.0.5,<1"
+    "qcodes (>=0.53.0,<1)",
+    "zhinst-qcodes (>=0.7.0,<1)",
+    "qcodes-contrib-drivers (>=0.23.0,<1)",
+    "pyqt5-qt5 (==5.15.2); sys_platform == 'win32'",
+    "pyqt5-qt5 (>=5.15.2,<6); sys_platform != 'win32'",
+    "quantify (>=0.0.5,<1)",
 ]
 
 [dependency-groups]
