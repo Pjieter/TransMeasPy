@@ -7,10 +7,10 @@ from qcodes_contrib_drivers.drivers.QuTech.IVVI import IVVI
 from quantify.analysis import base_analysis as ba
 from quantify.measurement import MeasurementControl
 from quantify.visualization.instrument_monitor import InstrumentMonitor
-from transmeaspy.measurements import base_measurement
+from transmeaspy.measurements.base_measurement import BaseMeasurement
 
 
-class IVMeasurement(base_measurement):
+class IVMeasurement(BaseMeasurement):
     """IV measurement class for QCoDeS."""
 
     # Ignore PLR0913
