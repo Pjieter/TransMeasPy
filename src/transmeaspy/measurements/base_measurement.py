@@ -24,7 +24,7 @@ class BaseMeasurement:
         sample_name: str,
         db_path: str | None = None,
         meas_ctrl: MeasurementControl = None,
-        plot_monitor: pqm.PlotMon = None,
+        plot_monitor: pqm.PlotMonitor_pyqt = None,
         instrument_monitor: InstrumentMonitor = None,
         live_plot: bool = True,
     ):
