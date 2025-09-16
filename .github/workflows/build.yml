@@ -65,7 +65,7 @@ jobs:
       - name: Python Poetry Action
         uses: abatilo/actions-poetry@v4.0.0
         with:
-          poetry-version: ${{ matrix.poetry-version }}
+          poetry-version: 2.2
       - name: Python info
         shell: bash -e {0}
         run: |
