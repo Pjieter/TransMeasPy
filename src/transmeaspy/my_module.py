@@ -19,7 +19,7 @@ def hello(name: str) -> str:
     Example:
         This function can be called with `Jane Smith` as argument using
 
-        >>> from TransMeasPy.my_module import hello
+        >>> from transmeaspy.my_module import hello
         >>> hello('Jane Smith')
         'Hello Jane Smith!'
 

@@ -1,4 +1,4 @@
-"""Tests for the TransMeasPy.my_module module."""
+"""Tests for the transmeaspy.my_module module."""
 
 import pytest
 from transmeaspy.my_module import hello
