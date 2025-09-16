@@ -1,24 +1,14 @@
 from abc import abstractmethod
-import numpy as np
-
-import quantify_core.visualization.pyqt_plotmon as pqm
-from quantify_core.analysis import base_analysis as ba
-from quantify_core.analysis import cosine_analysis as ca
-from quantify_core.data.handling import (
-    default_datadir,
-    set_datadir,
-)
-from quantify_core.measurement import MeasurementControl
-from quantify_core.utilities.examples_support import mk_cosine_instrument
-from quantify_core.utilities.experiment_helpers import create_plotmon_from_historical
-
-from quantify_core.utilities.inspect_utils import display_source_code
-from quantify_core.visualization.instrument_monitor import InstrumentMonitor
+import quantify.visualization.pyqt_plotmon as pqm
+from quantify.data.handling import default_datadir
+from quantify.data.handling import set_datadir
+from quantify.measurement import MeasurementControl
+from quantify.visualization.instrument_monitor import InstrumentMonitor
 
 
 class BaseMeasurement:
-    """
-    Base class for all measurements.
+    """Base class for all measurements.
+
     This class provides the basic parameters for all measurements,
     such as MeasurementControl, InstrumentMonitor, and PlotMon.
     It also provides the basic methods for all measurements,
@@ -27,11 +17,12 @@ class BaseMeasurement:
     but rather as a base class for all measurements.
     """
 
-    def __init__(
+    # Ignore PLR0913
+    def __init__(  # noqa: PLR0913
         self,
         experiment_name: str,
         sample_name: str,
-        db_path: str = None,
+        db_path: str | None = None,
         meas_ctrl: MeasurementControl = None,
         plot_monitor: pqm.PlotMon = None,
         instrument_monitor: InstrumentMonitor = None,
@@ -56,9 +47,8 @@ class BaseMeasurement:
         self.instrument_monitor = instrument_monitor
 
     @abstractmethod
-    def run(self):
-        """
-        Run the measurement.
+    def run(self) -> None:
+        """Runs the measurement.
+
         This method should be implemented by the subclasses.
         """
-        pass

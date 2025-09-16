@@ -1,73 +1,32 @@
-from pathlib import Path
-import string
 import numpy as np
-
-import qcodes as qc
 
 ## Multidimensional scanning module
-from qcodes.dataset import (
-    LinSweep,
-    Measurement,
-    ThreadPoolParamsCaller,
-    dond,
-    experiments,
-    initialise_or_create_database_at,
-    load_by_run_spec,
-    load_or_create_experiment,
-    plot_dataset,
-)
-
-from qcodes.station import Station
-
-qcodes_contrib_drivers.drivers.QuTech.IVVI.IVVI
-
-from qcodes.instrument.base import Instrument
+import quantify.visualization.pyqt_plotmon as pqm
 from qcodes.instrument.parameter import Parameter
-
-## Using interactive widget
-from qcodes.interactive_widget import experiments_widget
-
-import IPython.lib.backgroundjobs as bg
-from local_qcodes.measurements import BaseMeasurement
-from plottr.apps import inspectr
-
 from qcodes_contrib_drivers.drivers.QuTech.IVVI import IVVI
-from zhinst.qcodes import MFLI
-from local_qcodes.instrument_drivers.Keithley.Keithley_2182a import Keithley2182a
-from local_qcodes.utilities import utilities
+from quantify.analysis import base_analysis as ba
+from quantify.measurement import MeasurementControl
+from quantify.visualization.instrument_monitor import InstrumentMonitor
+from transmeaspy.measurements import base_measurement
 
 
-import numpy as np
+class IVMeasurement(base_measurement):
+    """IV measurement class for QCoDeS."""
 
-import quantify_core.visualization.pyqt_plotmon as pqm
-from quantify_core.analysis import base_analysis as ba
-from quantify_core.analysis import cosine_analysis as ca
-
-from quantify_core.measurement import MeasurementControl
-from quantify_core.visualization.instrument_monitor import InstrumentMonitor
-
-
-class IV_measurement(BaseMeasurement):
-    """
-    IV measurement class for QCoDeS
-    """
-
-    def __init__(
+    # Ignore PLR0913
+    def __init__(  # noqa: PLR0913
         self,
         experiment_name: str,
         sample_name: str,
         current_supply: Parameter,
-        voltage_meter: Keithley2182a,
+        voltage_meter: Parameter,
         db_path: str | None = None,
         meas_ctrl: MeasurementControl | None = None,
         plot_monitor: pqm.PlotMon | None = None,
         instrument_monitor: InstrumentMonitor | None = None,
         live_plot: bool = True,
     ):
-        """
-        Initialize the IV measurement class
-        """
-
+        """Initialize the IV measurement class."""
         super().__init__(
             experiment_name,
             sample_name,
@@ -86,10 +45,10 @@ class IV_measurement(BaseMeasurement):
         stop: float,
         num_points: int,
         delay: float = 0.05,
-    ):
-        """
-        Run the IV measurement.
-        This method performs a linear sweep of the current source from start to stop,
+    ) -> ba.BaseAnalysis:
+        """Runs the IV measurement.
+
+        This method performs a linear sweep of the current source from start to stop.
 
         Args:
             start (float): Start current value.
@@ -109,6 +68,7 @@ class IV_measurement(BaseMeasurement):
         dataset = self.meas_ctrl.run()
 
         analysis = ba.BaseAnalysis(
-            dataset=dataset, label=f"{self.sample_name}-{self.experiment_name}"
+            dataset=dataset,
+            label=f"{self.sample_name}-{self.experiment_name}",
         )
         return analysis.run()

@@ -68,5 +68,5 @@ jobs:
         run: poetry install --all-groups
       - name: Check style against standards using ruff
         run: |
-          ruff check
-          ruff format --check
+          poetry run ruff check --fix
+          poetry run ruff format --check
