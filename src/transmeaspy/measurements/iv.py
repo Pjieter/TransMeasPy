@@ -22,7 +22,7 @@ class IVMeasurement(base_measurement):
         voltage_meter: Parameter,
         db_path: str | None = None,
         meas_ctrl: MeasurementControl | None = None,
-        plot_monitor: pqm.PlotMon | None = None,
+        plot_monitor: pqm.PlotMonitor_pyqt | None = None,
         instrument_monitor: InstrumentMonitor | None = None,
         live_plot: bool = True,
     ):
